@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+:root {
+  /* Pérez & Asociados - Paleta Profesional Corregida */
+  --background: #efefef; /* Fondo de Sección Clara */
+  --background-dark: #333333; /* Principal Oscuro (Base del Header/Footer) */
+  --foreground: #333333; /* Texto Principal sobre fondos claros */
+  --foreground-light: #ffffff; /* Texto Principal sobre fondos oscuros */
+}
+
+@theme inline {
+  /* Colors - Pérez & Asociados (Hex Codes Exactos) */
+  --color-background: var(--background);
+  --color-background-dark: var(--background-dark);
+  --color-foreground: var(--foreground);
+  --color-foreground-light: var(--foreground-light);
+  
+  /* Paleta Principal */
+  --color-primary: #333333; /* Principal Oscuro (Base del Header/Footer/Backgrounds) */
+  --color-primary-600: #2a2a2a; /* Variante más oscura */
+  
+  /* Textos */
+  --color-text-primary: #ffffff; /* Texto Principal / Títulos sobre fondos oscuros */
+  --color-text-secondary: #cccccc; /* Texto Secundario / Cuerpo sobre fondos oscuros */
+  --color-text-dark: #333333; /* Texto sobre fondos claros */
+  
+  /* Acentos */
+  --color-accent: #e47a34; /* Color de Acento (Botones/CTAs/Elementos Destacados) */
+  --color-accent-600: #d96d26; /* Hover del acento */
+  --color-secondary: #6b8e23; /* Color Secundario de Acento (Verde Oliva/Verde Musgo) */
+  --color-secondary-600: #7c9b50; /* Variante del verde */
+  
+  /* Fondos */
+  --color-bg-light: #f8f8f8; /* Fondo de Sección Clara alternativo */
+  --color-bg-card: #ffffff; /* Fondo de tarjetas */
+  --color-light: #efefef; /* Secciones con fondo claro */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Utilities */
+.container-px {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container-px {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.section-sm {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.max-w-content {
+  max-width: 72rem; /* ~1152px */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Animación personalizada para las estrellitas */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+}
+
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+/* Animaciones de transición entre secciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Clases de utilidad para animaciones */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Eliminar cualquier borde del viewport */
+#__next, main {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Eliminar bordes de elementos que puedan causar líneas naranjas */
+*, *::before, *::after {
+  border-color: transparent !important;
+}
+
+/* Restablecer bordes específicos donde sean necesarios */
+.border, [class*="border-"] {
+  border-color: revert !important;
+}
+
+/* Mejoras de transición para elementos interactivos */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-bounce {
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
