@@ -60,10 +60,12 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/logo.png?v=2" />
       </head>
       <body
-        className={`${montserrat.variable} ${lato.variable} antialiased`}
+        className={`${montserrat.variable} ${lato.variable} antialiased transition-all duration-300`}
       >
         <Header />
-        {children}
+        <main className="transition-all duration-500">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

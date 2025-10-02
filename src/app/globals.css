@@ -1,39 +1,39 @@
 @import "tailwindcss";
 
 :root {
-  /* Pérez & Asociados - Paleta Profesional Corregida */
-  --background: #efefef; /* Fondo de Sección Clara */
-  --background-dark: #333333; /* Principal Oscuro (Base del Header/Footer) */
-  --foreground: #333333; /* Texto Principal sobre fondos claros */
-  --foreground-light: #ffffff; /* Texto Principal sobre fondos oscuros */
+  /* Paleta ESTUDIO JURÍDICO CRNKOVIC */
+  --background: #ffffff; /* Fondo general claro */
+  --background-dark: #054035; /* Primario oscuro (header/footer) */
+  --foreground: #054035; /* Texto principal sobre fondos claros */
+  --foreground-light: #ffffff; /* Texto sobre fondos oscuros */
 }
 
 @theme inline {
-  /* Colors - Pérez & Asociados (Hex Codes Exactos) */
+  /* Colores de marca */
   --color-background: var(--background);
   --color-background-dark: var(--background-dark);
   --color-foreground: var(--foreground);
   --color-foreground-light: var(--foreground-light);
   
   /* Paleta Principal */
-  --color-primary: #333333; /* Principal Oscuro (Base del Header/Footer/Backgrounds) */
-  --color-primary-600: #2a2a2a; /* Variante más oscura */
+  --color-primary: #054035; /* Primario oscuro */
+  --color-primary-600: #0A594B; /* Variante/verde medio */
   
   /* Textos */
-  --color-text-primary: #ffffff; /* Texto Principal / Títulos sobre fondos oscuros */
-  --color-text-secondary: #cccccc; /* Texto Secundario / Cuerpo sobre fondos oscuros */
-  --color-text-dark: #333333; /* Texto sobre fondos claros */
+  --color-text-primary: #ffffff; /* Texto sobre fondo oscuro */
+  --color-text-secondary: rgba(255,255,255,0.75); /* Secundario sobre oscuro */
+  --color-text-dark: #054035; /* Texto sobre fondo claro */
   
   /* Acentos */
-  --color-accent: #e47a34; /* Color de Acento (Botones/CTAs/Elementos Destacados) */
-  --color-accent-600: #d96d26; /* Hover del acento */
-  --color-secondary: #6b8e23; /* Color Secundario de Acento (Verde Oliva/Verde Musgo) */
-  --color-secondary-600: #7c9b50; /* Variante del verde */
+  --color-accent: #BF926B; /* Acento (arena) */
+  --color-accent-600: #A67859; /* Hover del acento */
+  --color-secondary: #0A594B; /* Verde medio */
+  --color-secondary-600: #074A3E; /* Verde más oscuro */
   
   /* Fondos */
-  --color-bg-light: #f8f8f8; /* Fondo de Sección Clara alternativo */
+  --color-bg-light: #fafafa; /* Fondo de sección clara */
   --color-bg-card: #ffffff; /* Fondo de tarjetas */
-  --color-light: #efefef; /* Secciones con fondo claro */
+  --color-light: #f3f4f6; /* Neutro claro */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -201,4 +201,493 @@ html {
 
 .transition-bounce {
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Animaciones avanzadas de entrada */
+@keyframes fadeInUpStagger {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeftStagger {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRightStagger {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleInStagger {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+/* Clases de animación mejoradas */
+.animate-fade-in-up-stagger {
+  animation: fadeInUpStagger 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left-stagger {
+  animation: slideInLeftStagger 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right-stagger {
+  animation: slideInRightStagger 0.8s ease-out forwards;
+}
+
+.animate-scale-in-stagger {
+  animation: scaleInStagger 0.6s ease-out forwards;
+}
+
+.animate-rotate-in {
+  animation: rotateIn 0.7s ease-out forwards;
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Efectos hover avanzados */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(191, 146, 107, 0.4);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-rotate {
+  transition: transform 0.3s ease;
+}
+
+.hover-rotate:hover {
+  transform: rotate(2deg);
+}
+
+/* Efectos de texto */
+.text-gradient {
+  background: linear-gradient(135deg, #054035, #BF926B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, #054035, #BF926B, #054035);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 2s infinite;
+}
+
+/* Efectos de botón */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+/* Efectos de card */
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(191, 146, 107, 0.1), rgba(5, 64, 53, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-hover:hover::before {
+  opacity: 1;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Efectos de scroll reveal */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Efectos de carga */
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Efectos de partículas */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float 6s ease-in-out infinite;
+}
+
+.particle:nth-child(odd) {
+  animation-delay: -2s;
+  animation-duration: 8s;
+}
+
+.particle:nth-child(even) {
+  animation-delay: -4s;
+  animation-duration: 10s;
+}
+
+/* Efectos creativos avanzados */
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gradient-border {
+  position: relative;
+  background: linear-gradient(135deg, #054035, #BF926B);
+  padding: 2px;
+  border-radius: 12px;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: white;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.neon-glow {
+  box-shadow: 0 0 20px rgba(191, 146, 107, 0.3), 0 0 40px rgba(191, 146, 107, 0.1);
+}
+
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.morphing-shape {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: morphing 8s ease-in-out infinite;
+}
+
+@keyframes morphing {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  50% {
+    border-radius: 70% 30% 40% 60% / 30% 70% 60% 40%;
+  }
+  75% {
+    border-radius: 40% 70% 60% 30% / 70% 40% 50% 60%;
+  }
+}
+
+.floating-elements {
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-elements::before,
+.floating-elements::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(45deg, rgba(191, 146, 107, 0.1), rgba(5, 64, 53, 0.1));
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-elements::before {
+  top: 20%;
+  left: 10%;
+  animation-delay: -2s;
+}
+
+.floating-elements::after {
+  bottom: 20%;
+  right: 10%;
+  animation-delay: -4s;
+}
+
+.creative-grid {
+  background-image: 
+    linear-gradient(rgba(191, 146, 107, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(191, 146, 107, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.diagonal-pattern {
+  background: linear-gradient(45deg, transparent 25%, rgba(191, 146, 107, 0.05) 25%, rgba(191, 146, 107, 0.05) 50%, transparent 50%, transparent 75%, rgba(191, 146, 107, 0.05) 75%);
+  background-size: 20px 20px;
+}
+
+.spotlight-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight-effect::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: spotlight 4s ease-in-out infinite;
+}
+
+@keyframes spotlight {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-30%, -30%) scale(1.2);
+    opacity: 0.1;
+  }
+}
+
+.creative-button {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #054035, #0A594B);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.creative-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.creative-button:hover::before {
+  left: 100%;
+}
+
+.creative-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(5, 64, 53, 0.3);
+}
+
+.advanced-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.advanced-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(191, 146, 107, 0.1), rgba(5, 64, 53, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+}
+
+.advanced-card:hover::before {
+  opacity: 1;
+}
+
+.advanced-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.creative-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.creative-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(191, 146, 107, 0.03), rgba(5, 64, 53, 0.03));
+  pointer-events: none;
+}
+
+.creative-section::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(191, 146, 107, 0.05), transparent);
+  transform: rotate(15deg);
+  pointer-events: none;
 }

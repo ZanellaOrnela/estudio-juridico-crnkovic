@@ -3,99 +3,89 @@ import Image from "next/image";
 
 const TEAM = [
   { 
-    name: "Lic. Ana García", 
-    role: "Socia Fundadora", 
-    specialty: "Derecho Civil y Comercial",
-    experience: "40+ años de experiencia",
-    image: "/abog1.png"
+    name: "Natalia E. Crnkovic", 
+    role: "Abogada", 
+    specialty: "Formada en Universidad Nacional de la Patagonia San Juan Bosco",
+    experience: "Matrícula STJ Santa Cruz T° IX F° 199",
+    image: "/profile.png",
+    facebook: "https://www.facebook.com/EstudioJuridicoCrnk/about/?utm_source=chatgpt.com"
   },
   { 
-    name: "Abog. Juan Pérez", 
-    role: "Socio", 
-    specialty: "Derecho Laboral y Previsional",
-    experience: "25+ años de experiencia",
-    image: "/abog2.png"
-  },
-  { 
-    name: "Dra. María Rodríguez", 
-    role: "Asociada Senior", 
-    specialty: "Derecho de Familia y Sucesiones",
-    experience: "15+ años de experiencia",
-    image: "/abog3.png"
+    name: "Nicolás A. Crnkovic", 
+    role: "Abogado", 
+    specialty: "Formado en Universidad Nacional de la Patagonia San Juan Bosco",
+    experience: "Chubut E 363 T° II F° 164 · Matrícula Federal T° 122 F° 910 · STJ Santa Cruz T° XIV F° 045",
+    image: "/profile.png",
+    facebook: "https://m.facebook.com/EstudioJuridicoCrnk/posts/uno-de-los-integrantes-de-estudio-juridico-crnkovic-es-nicolas-a-crnkovic-abogad/434607449083812/?utm_source=chatgpt.com"
   },
 ];
 
 export default function Team() {
   return (
-    <section id="nosotros" className="bg-[#403E28] py-16 md:py-20 lg:py-24 relative px-6 sm:px-8 md:px-4">
-      {/* Título flotante sobre la transición */}
-      <div className="absolute -top-12 left-6 right-6 sm:left-12 sm:right-12 md:left-1/2 md:right-auto md:transform md:-translate-x-1/2 z-20">
-        <div className="bg-white px-6 sm:px-8 md:px-12 py-6 md:py-8 shadow-xl border border-gray-100">
-          <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#403E28] font-montserrat mb-6">
-              Conoce a Nuestro <span className="text-[#D96E48]">Equipo</span>
-            </h2>
-            <div className="w-20 h-1 bg-[#D96E48] mx-auto rounded-full"></div>
-          </div>
-        </div>
+    <section id="nosotros" className="bg-[#BF926B]/5 py-20 md:py-24 lg:py-28 relative px-6 sm:px-8 md:px-4 creative-section">
+      {/* Fondo creativo: patrón diagonal */}
+      <div aria-hidden className="absolute inset-0 pointer-events-none select-none overflow-hidden">
+        <div className="absolute inset-0 diagonal-pattern opacity-20"></div>
+        <div className="absolute inset-0 creative-grid opacity-10"></div>
       </div>
-      
-      {/* Elementos gráficos de fondo */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-1/4 left-0 w-64 h-64 bg-[#737048] rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-[#D96E48] rounded-full blur-3xl" />
-      </div>
-      
       <div className="relative max-w-content container-px mx-auto">
         <SectionTransition>
-          <div className="text-center mb-16 pt-24 sm:pt-28 md:pt-32">
-            <p className="text-lg text-[#F5F5F5] font-lato max-w-3xl mx-auto leading-relaxed">
-              Somos un estudio enfocado en brindar asesoramiento claro, efectivo y humano. 
-              Nuestro equipo combina experiencia, actualización constante y un trato cercano 
-              para garantizar el mejor resultado en cada caso.
+          <div className="text-center mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#054035] font-montserrat mb-6 text-shadow">
+              Conoce a Nuestro <span className="text-gradient">Equipo</span>
+            </h2>
+            <div className="w-20 h-1 bg-[#BF926B] mx-auto rounded-full mb-6"></div>
+            <p className="text-base text-[#0A594B] font-lato max-w-3xl mx-auto leading-relaxed">
+              Somos Natalia E. Crnkovic y Nicolás A. Crnkovic, hermanos y abogados formados en la Universidad Nacional de la Patagonia San Juan Bosco. 
+              Trabajamos en equipo con enfoque estratégico y preventivo, priorizando soluciones reales, trato cercano y comunicación clara en cada etapa. 
+              Actuamos en Santa Cruz y Chubut.
             </p>
           </div>
         </SectionTransition>
         
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid sm:grid-cols-2 gap-8 lg:gap-10 max-w-4xl mx-auto">
           {TEAM.map((member, index) => (
             <SectionTransition key={member.name} delay={200 + (index * 150)}>
-              <div className="group bg-white/10 backdrop-blur-sm rounded-3xl overflow-hidden hover:bg-white/15 transition-all duration-500 border border-white/20 hover:border-[#D96E48]/40 hover:shadow-2xl hover:shadow-[#D96E48]/20">
-                {/* Foto profesional - Protagonista */}
-                <div className="relative overflow-hidden">
-                  <div className="aspect-square w-full">
-                    <Image 
-                      src={member.image} 
-                      alt={`Foto de ${member.name}`}
-                      width={400}
-                      height={400}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                  </div>
-                  {/* Overlay gradiente */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
-                  {/* Badge de experiencia flotante */}
-                  <div className="absolute top-4 right-4 bg-[#D96E48] text-white px-3 py-1 rounded-full text-xs font-semibold font-lato shadow-lg">
-                    {member.experience.split(' ')[0]}
-                  </div>
-                </div>
-                
+              <div className="group advanced-card rounded-2xl overflow-hidden border border-[#E8ECEB] spotlight-effect h-full flex flex-col">
                 {/* Información del abogado */}
-                <div className="p-6 text-center space-y-3">
-                  <h3 className="text-xl md:text-2xl font-bold text-white font-montserrat group-hover:text-[#D96E48] transition-colors duration-300">
-                    {member.name}
-                  </h3>
-                  <p className="text-base md:text-lg text-[#D96E48] font-semibold font-lato">
-                    {member.role}
-                  </p>
-                  <p className="text-[#F5F5F5] text-sm md:text-base font-lato leading-relaxed">
-                    {member.specialty}
-                  </p>
-                  <div className="pt-2">
-                    <span className="inline-block bg-white/10 text-[#CCCCCC] text-xs font-lato px-3 py-1 rounded-full border border-white/20">
+                <div className="p-8 text-center space-y-4 flex-1 flex flex-col justify-between">
+                  <div>
+                    <div className="w-20 h-20 bg-[#054035] rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-white font-bold text-2xl font-montserrat">
+                        {member.name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    </div>
+                    <h3 className="text-lg md:text-xl font-bold text-[#054035] font-montserrat">
+                      {member.name}
+                    </h3>
+                    <div className="inline-block bg-[#BF926B]/10 text-[#054035] text-sm font-lato px-4 py-2 rounded-full border border-[#BF926B]/20 mb-3">
+                      {member.role}
+                    </div>
+                    <p className="text-[#0A594B] text-sm font-lato leading-relaxed mb-4">
+                      {member.specialty}
+                    </p>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <span className="inline-block bg-white text-[#054035] text-xs font-lato px-3 py-1 rounded-md border border-[#BF926B]/30 shadow-sm">
                       {member.experience}
                     </span>
+                    {member.facebook && (
+                      <div className="mt-2 relative z-10">
+                        <a
+                          href={member.facebook}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-[#054035] hover:text-[#BF926B] transition-colors duration-300 text-sm font-lato hover:underline cursor-pointer relative z-20 px-2 py-1 rounded-md hover:bg-[#BF926B]/5"
+                          style={{ pointerEvents: 'auto' }}
+                        >
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                          </svg>
+                          Ver en Facebook
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -106,11 +96,11 @@ export default function Team() {
         {/* Sección de valores o misión */}
         <SectionTransition delay={800}>
           <div className="mt-20 text-center">
-            <div className="max-w-4xl mx-auto bg-white/10 backdrop-blur-sm rounded-2xl p-10 border border-white/20 shadow-xl">
-              <h3 className="text-2xl md:text-3xl font-bold text-white font-montserrat mb-6">
-                Nuestra <span className="text-[#D96E48]">Misión</span>
+            <div className="max-w-4xl mx-auto bg-[#BF926B]/5 rounded-2xl p-10 border border-[#BF926B]/20 shadow-xl hover-lift hover-glow transition-all duration-500">
+              <h3 className="text-xl md:text-2xl font-bold text-[#054035] font-montserrat mb-6">
+                Nuestra <span className="text-gradient">Misión</span>
               </h3>
-              <p className="text-base md:text-lg text-[#F5F5F5] font-lato leading-relaxed">
+              <p className="text-base text-[#0A594B] font-lato leading-relaxed">
                 Brindar soluciones legales integrales con los más altos estándares de calidad, 
                 ética profesional y compromiso con nuestros clientes, construyendo relaciones 
                 duraderas basadas en la confianza y los resultados exitosos.
