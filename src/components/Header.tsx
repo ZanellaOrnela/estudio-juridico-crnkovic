@@ -46,7 +46,7 @@ export default function Header() {
             href="#contacto"
             className="btn-primary hover-lift hover-glow px-3 md:px-4 h-8 md:h-10 inline-flex items-center justify-center rounded-full bg-[#BF926B] text-[#054035] font-semibold hover:bg-[#A67859] transition-all duration-300 font-lato text-xs md:text-sm"
           >
-            Consulta Gratuita
+            Consulta Inicial
           </Link>
         </div>
         
@@ -82,7 +82,7 @@ export default function Header() {
             className="btn-primary hover-lift hover-glow mt-3 px-4 h-10 inline-flex items-center justify-center rounded-full bg-[#BF926B] text-[#054035] font-semibold font-lato text-sm hover:bg-[#A67859] transition-all duration-300"
             onClick={() => setOpen(false)}
           >
-            Consulta Gratuita
+            Consulta Inicial
           </a>
         </div>
       </div>

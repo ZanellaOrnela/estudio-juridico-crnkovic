@@ -1,5 +1,4 @@
 import SectionTransition from "./SectionTransition";
-import Image from "next/image";
 
 const TEAM = [
   { 

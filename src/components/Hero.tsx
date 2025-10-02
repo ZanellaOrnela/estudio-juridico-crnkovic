@@ -69,7 +69,7 @@ export default function Hero() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
                 <Link
                   href="https://wa.me/5492974573242?text=Hola%20quisiera%20hacer%20una%20consulta"
-                  className="creative-button hover-lift hover-glow inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold text-white transition-all duration-300"
+                  className="creative-button hover-lift hover-glow inline-flex items-center justify-center px-4 sm:px-6 py-3 rounded-full font-semibold text-white transition-all duration-300 text-sm sm:text-base"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -77,14 +77,14 @@ export default function Hero() {
                 </Link>
                 <Link
                   href="tel:+5492974573242"
-                  className="hover-lift hover-scale inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold transition-all duration-300"
+                  className="hover-lift hover-scale inline-flex items-center justify-center px-4 sm:px-6 py-3 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base"
                   style={{ color: '#054035', borderColor: '#BF926B', borderWidth: 2 }}
                 >
                   Llamar ahora
                 </Link>
                 <Link
                   href="#contacto"
-                  className="hover-lift hover-scale inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold transition-all duration-300"
+                  className="hover-lift hover-scale inline-flex items-center justify-center px-4 sm:px-6 py-3 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base"
                   style={{ color: '#054035', borderColor: '#BF926B', borderWidth: 2 }}
                 >
                   Enviar consulta

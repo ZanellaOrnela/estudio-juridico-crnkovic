@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     "Más de 40 años de trayectoria brindando soluciones legales con integridad y visión moderna. Asesoría confiable para un futuro seguro.",
   metadataBase: new URL("https://example.com"),
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    icon: "/logo (1).png",
+    shortcut: "/logo (1).png",
+    apple: "/logo (1).png",
   },
   openGraph: {
     title: "ESTUDIO JURÍDICO CRNKOVIC | Soluciones Legales con Integridad",
@@ -55,9 +55,9 @@ export default function RootLayout({
     <html lang="es">
       <head>
         {/* Force favicon to use site logo, overriding default favicon.ico */}
-        <link rel="icon" href="/logo.png?v=2" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/logo.png?v=2" />
-        <link rel="apple-touch-icon" href="/logo.png?v=2" />
+        <link rel="icon" href="/logo (1).png?v=3" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/logo (1).png?v=3" />
+        <link rel="apple-touch-icon" href="/logo (1).png?v=3" />
       </head>
       <body
         className={`${montserrat.variable} ${lato.variable} antialiased transition-all duration-300`}

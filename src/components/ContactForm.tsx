@@ -74,7 +74,7 @@ export default function ContactForm() {
       } else {
         showCustomAlert("Hubo un error al enviar la consulta. Por favor, inténtalo de nuevo.", "error");
       }
-    } catch (error) {
+    } catch {
       showCustomAlert("Hubo un error al enviar la consulta. Por favor, inténtalo de nuevo.", "error");
     } finally {
       setIsSubmitting(false);
@@ -94,7 +94,7 @@ export default function ContactForm() {
       <div className="relative max-w-content container-px mx-auto">
         {/* Alert personalizado */}
         {showAlert && (
-          <div className={`fixed top-4 right-4 z-50 max-w-md mx-auto p-4 rounded-xl shadow-lg border-2 transition-all duration-500 transform ${
+          <div className={`fixed top-4 left-4 right-4 sm:left-auto sm:right-4 sm:max-w-md z-50 mx-auto p-4 rounded-xl shadow-lg border-2 transition-all duration-500 transform ${
             alertType === "success" 
               ? "bg-green-50 border-green-200 text-green-800" 
               : "bg-red-50 border-red-200 text-red-800"
@@ -152,7 +152,7 @@ export default function ContactForm() {
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_cc" value="estudiojuridicocrnk@gmail.com" />
-              <div className="grid sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-lato font-semibold text-[#054035] flex items-center gap-2">
                     <span className="w-2 h-1 bg-[#BF926B] rounded-full"></span>
@@ -206,7 +206,7 @@ export default function ContactForm() {
                   )}
                 </div>
               </div>
-              <div className="grid sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-2">
                   <label htmlFor="phone" className="text-sm font-lato font-semibold text-[#054035] flex items-center gap-2">
                     <span className="w-2 h-1 bg-[#BF926B] rounded-full"></span>
@@ -284,7 +284,7 @@ export default function ContactForm() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="creative-button hover-lift hover-glow w-full sm:w-auto px-8 py-4 rounded-full text-white font-bold transition-all duration-300 font-montserrat text-base shadow-lg relative z-30 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="creative-button hover-lift hover-glow w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-full text-white font-bold transition-all duration-300 font-montserrat text-sm sm:text-base shadow-lg relative z-30 disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{ pointerEvents: 'auto' }}
                 >
                   {isSubmitting ? "Enviando..." : "Enviar Consulta"}
@@ -306,8 +306,8 @@ export default function ContactForm() {
               <div className="w-12 h-12 bg-[#BF926B]/15 rounded-full flex items-center justify-center mx-auto hover-scale">
                 <div className="w-6 h-1 bg-[#054035] rounded-full"></div>
               </div>
-              <h3 className="text-[#054035] font-semibold font-montserrat">Consulta Gratuita</h3>
-              <p className="text-[#0A594B] text-sm font-lato">Primera evaluación sin costo</p>
+              <h3 className="text-[#054035] font-semibold font-montserrat">Atención Personalizada</h3>
+              <p className="text-[#0A594B] text-sm font-lato">Trato directo con los abogados</p>
             </div>
             <div className="space-y-3 hover-lift transition-all duration-300">
               <div className="w-12 h-12 bg-[#BF926B]/15 rounded-full flex items-center justify-center mx-auto hover-scale">
