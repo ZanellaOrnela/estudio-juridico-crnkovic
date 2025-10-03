@@ -25,7 +25,7 @@ export default function FAQs() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
-    alert(`FAQ clicked: ${index}, Current open: ${openIndex}`);
+    console.log('FAQ clicked:', index, 'Current open:', openIndex);
     setOpenIndex(openIndex === index ? null : index);
   };
 
@@ -42,7 +42,9 @@ export default function FAQs() {
 
         <div className="max-w-3xl mx-auto space-y-4">
           {FAQS.map((f, idx) => (
-            <div key={f.q} className="bg-white rounded-xl border border-[#E8ECEB] p-4 shadow-sm hover:shadow-md transition-all duration-300">
+            <div key={f.q} className={`bg-white rounded-xl border p-4 shadow-sm hover:shadow-md transition-all duration-300 ${
+              openIndex === idx ? 'border-[#BF926B] shadow-lg' : 'border-[#E8ECEB]'
+            }`}>
               <div 
                 className="cursor-pointer select-none"
                 onClick={() => toggleFAQ(idx)}
@@ -60,7 +62,7 @@ export default function FAQs() {
                 </div>
               </div>
               {openIndex === idx && (
-                <div className="pt-3 text-[#0A594B] font-lato text-sm leading-relaxed animate-fadeIn">
+                <div className="pt-3 text-[#0A594B] font-lato text-sm leading-relaxed border-t border-[#E8ECEB] mt-3">
                   {f.a}
                 </div>
               )}
