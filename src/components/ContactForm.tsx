@@ -146,6 +146,7 @@ export default function ContactForm() {
               className="grid gap-6 relative z-20"
               onSubmit={handleSubmit}
               style={{ pointerEvents: 'auto' }}
+              suppressHydrationWarning
             >
               {/* FormSubmit special fields */}
               <input type="hidden" name="_subject" value="Nueva consulta desde el sitio" />
@@ -169,6 +170,8 @@ export default function ContactForm() {
                     }`}
                     placeholder="Tu nombre completo"
                     style={{ pointerEvents: 'auto' }}
+                    suppressHydrationWarning
+                    autoComplete="off"
                   />
                   {errors.name && (
                     <p className="text-red-500 text-xs font-lato mt-1 flex items-center gap-1">
@@ -195,6 +198,8 @@ export default function ContactForm() {
                     }`}
                     placeholder="tu@email.com"
                     style={{ pointerEvents: 'auto' }}
+                    suppressHydrationWarning
+                    autoComplete="off"
                   />
                   {errors.email && (
                     <p className="text-red-500 text-xs font-lato mt-1 flex items-center gap-1">
@@ -219,6 +224,8 @@ export default function ContactForm() {
                     className="w-full h-12 rounded-xl border-2 border-[#E8ECEB] bg-white px-4 text-[#054035] placeholder-[#0A594B]/50 focus:border-[#BF926B] focus:outline-none transition-all duration-300 font-lato relative z-30"
                     placeholder="(11) 1234-5678"
                     style={{ pointerEvents: 'auto' }}
+                    suppressHydrationWarning
+                    autoComplete="off"
                   />
                 </div>
                 <div className="space-y-2">
@@ -235,6 +242,7 @@ export default function ContactForm() {
                         : "border-[#E8ECEB] focus:border-[#BF926B]"
                     }`}
                     style={{ pointerEvents: 'auto' }}
+                    suppressHydrationWarning
                   >
                     <option value="" className="bg-white text-[#054035]">Selecciona un área</option>
                     <option value="Derecho Civil" className="bg-white text-[#054035]">Derecho Civil</option>
@@ -270,6 +278,8 @@ export default function ContactForm() {
                   }`}
                   placeholder="Describe brevemente tu situación legal. Cuanto más detalle proporciones, mejor podremos ayudarte..."
                   style={{ pointerEvents: 'auto' }}
+                  suppressHydrationWarning
+                  autoComplete="off"
                 />
                 {errors.message && (
                   <p className="text-red-500 text-xs font-lato mt-1 flex items-center gap-1">
@@ -286,6 +296,7 @@ export default function ContactForm() {
                   disabled={isSubmitting}
                   className="creative-button hover-lift hover-glow w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-full text-white font-bold transition-all duration-300 font-montserrat text-sm sm:text-base shadow-lg relative z-30 disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{ pointerEvents: 'auto' }}
+                  suppressHydrationWarning
                 >
                   {isSubmitting ? "Enviando..." : "Enviar Consulta"}
                 </button>

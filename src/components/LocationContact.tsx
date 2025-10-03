@@ -1,24 +1,15 @@
 import SectionTransition from "./SectionTransition";
 import ScrollReveal from "./ScrollReveal";
 
-const ADDRESS = "Galería Comercial — Local 10, Av. 25 de Mayo, Las Heras, Santa Cruz (CP 9017)";
-// Consulta simplificada para Maps (evitar caracteres especiales y mejorar geocodificación)
-const MAP_QUERY = "Galeria Comercial Local 10, Av 25 de Mayo, Las Heras, Santa Cruz 9017, Argentina";
-// OPCIONAL: si conocés coordenadas exactas, completá estos valores y el mapa
-// mostrará el pin en ese punto con máxima precisión.
-const MAP_LAT: number | null = null; // ej: -46.54123
-const MAP_LNG: number | null = null; // ej: -68.93567
-const HAS_COORDS = MAP_LAT !== null && MAP_LNG !== null;
+const ADDRESS = "F35M+V4 Las Heras, Santa Cruz, Argentina";
+// Consulta por dirección exacta (forzar uso de dirección en vez de coordenadas)
+const MAP_QUERY = "F35M+V4 Las Heras, Santa Cruz, Argentina";
 const PHONE_DISPLAY = "297 457-3242";
 const PHONE_DIAL = "+5492974573242";
 const WHATSAPP_URL = `https://wa.me/5492974573242?text=${encodeURIComponent("Hola, quisiera hacer una consulta.")}`;
 const EMAIL = "estudiojuridicocrnk@gmail.com";
-const MAPS_LINK = HAS_COORDS
-  ? `https://www.google.com/maps/search/?api=1&query=${MAP_LAT},${MAP_LNG}`
-  : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_QUERY)}`;
-const MAP_EMBED_SRC = HAS_COORDS
-  ? `https://www.google.com/maps?q=${MAP_LAT},${MAP_LNG}&z=17&output=embed`
-  : `https://www.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&z=17&iwloc=near&output=embed`;
+const MAPS_LINK = "https://maps.app.goo.gl/qTeHYu6w1Ukd6mTL7";
+const MAP_EMBED_SRC = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1098.3355661022626!2d-68.91764432963764!3d-46.54040104378359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdef270037569a1b%3A0x2706d0705a227f0b!2sEstudio%20jur%C3%ADdico%20crnkovic!5e1!3m2!1ses-419!2sus!4v1759509814081!5m2!1ses-419!2sus";
 
 export default function LocationContact() {
   return (
@@ -116,18 +107,26 @@ export default function LocationContact() {
           <SectionTransition delay={250}>
             <ScrollReveal direction="right" delay={300}>
               <div className="advanced-card rounded-2xl p-2 sm:p-4 border border-[#E8ECEB] shadow-md h-full hover-lift transition-all duration-500 spotlight-effect flex flex-col">
-                <div className="relative rounded-xl overflow-hidden aspect-[4/3] bg-[#F7F7F7] flex-1">
+                <div className="relative rounded-xl overflow-hidden aspect-[4/3] bg-[#F7F7F7] flex-1 z-30" style={{ pointerEvents: 'auto' }}>
                   <iframe
                     title="Mapa: cómo llegar al Estudio Jurídico Crnkovic"
                     src={MAP_EMBED_SRC}
-                    className="w-full h-full"
+                    className="w-full h-full relative z-40"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
+                    allowFullScreen
+                    style={{ pointerEvents: 'auto' }}
                     aria-label="Mapa embebido con la ubicación del estudio"
                   />
                 </div>
-                <div className="flex justify-end mt-3">
-                  <a href={MAPS_LINK} target="_blank" rel="noopener noreferrer" className="text-sm text-[#054035] font-montserrat underline underline-offset-4 hover:text-[#BF926B] transition-colors duration-300">
+                <div className="flex justify-end mt-3 relative z-50" style={{ pointerEvents: 'auto' }}>
+                  <a
+                    href={MAPS_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-[#054035] font-montserrat underline underline-offset-4 hover:text-[#BF926B] transition-colors duration-300 relative z-50"
+                    style={{ pointerEvents: 'auto' }}
+                  >
                     Ver en Google Maps
                   </a>
                 </div>

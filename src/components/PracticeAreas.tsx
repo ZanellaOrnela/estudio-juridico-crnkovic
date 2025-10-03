@@ -74,6 +74,17 @@ const PRACTICE_AREAS = [
       "Publicidad engañosa",
       "Cláusulas abusivas"
     ],
+  },
+  {
+    title: "Asesoramiento a Empresas y Sociedades",
+    services: [
+      "Asesoramiento legal continuo",
+      "Contratos comerciales y civiles",
+      "Constitución y regularización societaria",
+      "Compliance y prevención de conflictos",
+      "Gestión de cobranzas y ejecuciones",
+      "Negociaciones, mediaciones y acuerdos por escrito"
+    ],
   }
 ];
 

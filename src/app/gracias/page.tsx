@@ -1,4 +1,13 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Gracias | ESTUDIO JURÍDICO CRNKOVIC",
+  description: "Gracias por tu consulta. Te responderemos con una evaluación inicial y próximos pasos.",
+  alternates: {
+    canonical: "/gracias",
+  },
+};
 
 export default function Gracias() {
   return (

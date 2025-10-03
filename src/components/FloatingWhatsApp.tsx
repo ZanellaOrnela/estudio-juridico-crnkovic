@@ -7,7 +7,7 @@ export default function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Abrir WhatsApp"
-      className="fixed md:hidden bottom-6 right-6 z-50 w-14 h-14 rounded-full grid place-items-center shadow-xl hover-lift hover-glow animate-float transition-all duration-300"
+      className="fixed bottom-6 right-6 z-50 w-14 h-14 sm:w-16 sm:h-16 rounded-full grid place-items-center shadow-xl hover-lift hover-glow animate-float transition-all duration-300"
       style={{ background: '#054035', color: '#FFFFFF' }}
     >
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden className="transition-transform duration-300 group-hover:scale-110">

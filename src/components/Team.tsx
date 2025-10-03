@@ -1,4 +1,5 @@
 import SectionTransition from "./SectionTransition";
+import Image from "next/image";
 
 const TEAM = [
   { 
@@ -6,7 +7,7 @@ const TEAM = [
     role: "Abogada", 
     specialty: "Formada en Universidad Nacional de la Patagonia San Juan Bosco",
     experience: "Matrícula STJ Santa Cruz T° IX F° 199",
-    image: "/profile.png",
+    image: "/WhatsApp Image 2025-10-02 at 16.24.34.jpeg",
     facebook: "https://www.facebook.com/EstudioJuridicoCrnk/about/?utm_source=chatgpt.com"
   },
   { 
@@ -14,7 +15,7 @@ const TEAM = [
     role: "Abogado", 
     specialty: "Formado en Universidad Nacional de la Patagonia San Juan Bosco",
     experience: "Chubut E 363 T° II F° 164 · Matrícula Federal T° 122 F° 910 · STJ Santa Cruz T° XIV F° 045",
-    image: "/profile.png",
+    image: "/Gemini_Generated_Image_n3yu3in3yu3in3yu.png",
     facebook: "https://m.facebook.com/EstudioJuridicoCrnk/posts/uno-de-los-integrantes-de-estudio-juridico-crnkovic-es-nicolas-a-crnkovic-abogad/434607449083812/?utm_source=chatgpt.com"
   },
 ];
@@ -46,14 +47,19 @@ export default function Team() {
           {TEAM.map((member, index) => (
             <SectionTransition key={member.name} delay={200 + (index * 150)}>
               <div className="group advanced-card rounded-2xl overflow-hidden border border-[#E8ECEB] spotlight-effect h-full flex flex-col">
+                {/* Foto grande superior */}
+                <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] bg-[#F7F7F7]">
+                  <Image
+                    src={member.image}
+                    alt={`${member.name} - ${member.role}`}
+                    fill
+                    className={`transition-transform duration-700 ease-out group-hover:scale-[1.03] object-cover ${index === 0 ? 'object-top' : ''}`}
+                    priority={index === 0}
+                  />
+                </div>
                 {/* Información del abogado */}
                 <div className="p-8 text-center space-y-4 flex-1 flex flex-col justify-between">
                   <div>
-                    <div className="w-20 h-20 bg-[#054035] rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white font-bold text-2xl font-montserrat">
-                        {member.name.split(' ').map(n => n[0]).join('')}
-                      </span>
-                    </div>
                     <h3 className="text-lg md:text-xl font-bold text-[#054035] font-montserrat">
                       {member.name}
                     </h3>

@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
+
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
@@ -23,17 +25,20 @@ export const metadata: Metadata = {
   },
   description:
     "Más de 40 años de trayectoria brindando soluciones legales con integridad y visión moderna. Asesoría confiable para un futuro seguro.",
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL(SITE_URL),
   icons: {
     icon: "/logo (1).png",
     shortcut: "/logo (1).png",
     apple: "/logo (1).png",
   },
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "ESTUDIO JURÍDICO CRNKOVIC | Soluciones Legales con Integridad",
     description:
       "Más de 40 años de trayectoria brindando soluciones legales con integridad y visión moderna.",
-    url: "https://example.com",
+    url: SITE_URL,
     siteName: "ESTUDIO JURÍDICO CRNKOVIC",
     locale: "es_AR",
     type: "website",
@@ -58,6 +63,96 @@ export default function RootLayout({
         <link rel="icon" href="/logo (1).png?v=3" />
         <link rel="icon" type="image/png" sizes="32x32" href="/logo (1).png?v=3" />
         <link rel="apple-touch-icon" href="/logo (1).png?v=3" />
+        {/* JSON-LD LocalBusiness */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LegalService",
+              name: "Estudio Jurídico Crnkovic",
+              description:
+                "Estudio jurídico en Santa Cruz y Chubut. Asesoría legal con enfoque estratégico y preventivo.",
+              url: SITE_URL,
+              image: `${SITE_URL}/logo (1).png`,
+              logo: `${SITE_URL}/logo (1).png`,
+              telephone: "+54 9 297 457-3242",
+              email: "estudiojuridicocrnk@gmail.com",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Galería Comercial — Local 10, Av. 25 de Mayo",
+                addressLocality: "Las Heras",
+                addressRegion: "Santa Cruz",
+                postalCode: "9017",
+                addressCountry: "AR",
+              },
+              hasMap:
+                "https://www.google.com/maps/search/?api=1&query=Galeria%20Comercial%20Local%2010%2C%20Av%2025%20de%20Mayo%2C%20Las%20Heras%2C%20Santa%20Cruz%209017%2C%20Argentina",
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: undefined,
+                longitude: undefined,
+              },
+              openingHoursSpecification: [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                  ],
+                  opens: "09:00",
+                  closes: "18:00",
+                },
+              ],
+              sameAs: [
+                "https://m.facebook.com/EstudioJuridicoCrnk",
+                "https://instagram.com/estudiojuridicocrnk",
+              ],
+              areaServed: [
+                { "@type": "AdministrativeArea", name: "Santa Cruz" },
+                { "@type": "AdministrativeArea", name: "Chubut" },
+              ],
+              serviceOfferred: undefined,
+              makesOffer: {
+                "@type": "OfferCatalog",
+                name: "Servicios legales",
+                itemListElement: [
+                  {
+                    "@type": "Offer",
+                    itemOffered: { "@type": "Service", name: "Derecho Civil" },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: { "@type": "Service", name: "Derecho Comercial" },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: { "@type": "Service", name: "Derecho Laboral" },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: { "@type": "Service", name: "Derecho de Familia" },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: { "@type": "Service", name: "Sucesiones" },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: { "@type": "Service", name: "Asesoramiento Preventivo" },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: { "@type": "Service", name: "Asesoramiento a Empresas y Sociedades" },
+                  },
+                ],
+              },
+            }),
+          }}
+        />
       </head>
       <body
         className={`${montserrat.variable} ${lato.variable} antialiased transition-all duration-300`}
