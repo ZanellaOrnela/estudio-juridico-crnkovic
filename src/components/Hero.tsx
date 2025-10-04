@@ -98,7 +98,7 @@ export default function Hero() {
             <div className="relative w-full max-w-md mx-auto md:ml-auto">
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl hover-lift group">
                 <Image
-                  src="/Gemini_Generated_Image_pn2wnwpn2wnwpn2w.png"
+                  src="/Gemini_Generated_Image_pn2wnwpn2wnwpn2w_upscayl_4x_high-fidelity-4x.png"
                   alt="Estudio Jurídico Crnkovic - Abogados profesionales en Santa Cruz y Chubut"
                   fill
                   className="object-cover object-center scale-140 group-hover:scale-145 transition-transform duration-700"
