@@ -6,7 +6,7 @@ const TEAM = [
     name: "Natalia E. Crnkovic", 
     role: "Abogada", 
     specialty: "Formada en Universidad Nacional de la Patagonia San Juan Bosco",
-    experience: "Matrícula STJ Santa Cruz T° IX F° 199",
+    experience: "Matrícula CPACR C1108 T°006 F°114 · Matrícula de Chubut · Matrícula Federal T° 122 F° 75",
     image: "/WhatsApp Image 2025-10-02 at 16.24.34.jpeg",
     facebook: "https://www.facebook.com/EstudioJuridicoCrnk/about/?utm_source=chatgpt.com"
   },
