@@ -152,7 +152,6 @@ export default function ContactForm() {
               <input type="hidden" name="_subject" value="Nueva consulta desde el sitio" />
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_cc" value="zanellaornela1@gmail.com" />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-lato font-semibold text-[#054035] flex items-center gap-2">
