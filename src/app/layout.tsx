@@ -153,6 +153,7 @@ export default function RootLayout({
             }),
           }}
         />
+        <meta name="google-site-verification" content="PgCZFUqebkiuiEVyY82YMBK9h7M29VOcPPkffkH0mNM" />
       </head>
       <body
         className={`${montserrat.variable} ${lato.variable} antialiased transition-all duration-300`}
